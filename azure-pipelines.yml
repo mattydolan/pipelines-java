@@ -28,16 +28,15 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
-
 - task: DownloadBuildArtifacts@0
-        inputs:
-          buildType: 'current'
-          downloadType: 'specific'
-          downloadPath: '$(System.ArtifactsDirectory)'
+  inputs:
+    buildType: 'current'
+    downloadType: 'specific'
+    downloadPath: '$(System.ArtifactsDirectory)'
 
 - task: CmdLine@2
   inputs:
-    script: |
-      echo Write your commands here
-      
-      echo Matt
+        script: |
+          echo Write your commands here
+          
+          echo Hello world
